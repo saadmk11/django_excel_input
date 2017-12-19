@@ -1,0 +1,8 @@
+<h1>Upload Excel File</h1>
+<hr>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="data">
+    <button type="submit">Upload</button>
+</form>

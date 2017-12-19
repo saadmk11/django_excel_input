@@ -1,0 +1,26 @@
+<h1>Search</h1>
+<hr>
+
+<form method='GET' action=''>
+    <input type='text' name='q' placeholder='Search' value='{{ request.GET.q }}'/>
+    <input type='submit' value='Search' />
+</form>
+
+<hr>
+{% if request.GET.q %}
+
+<p>showing search results for <b>"{{ request.GET.q }}"</b></p><br>
+
+{% endif %}
+<h3><a href="{% url 'upload_file' %}">Upload Data</a></h3>
+<h1>User Info</h1>
+<hr>
+
+{% for obj in queryset %}
+
+    <b>Name:</b> {{ obj.name }}<br>
+    <b>Country:</b> {{ obj.country }}<br>
+    <b>E-mail:</b> {{ obj.email }}
+    <hr>
+
+{% endfor %}
